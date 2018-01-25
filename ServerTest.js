@@ -26,7 +26,7 @@ var ServerTest;
         console.log("Ich h�re Stimmen!!");
         // Header: Antwort kommt im HTML-Format mit uft-8
         _response.setHeader("content-type", "text/html; charset=utf-8");
-        // Header: ?
+        // Header: �berpr�fung, ob Antwort des Servers geteilt werden kann
         _response.setHeader("Access-Control-Allow-Origin", "*");
         // Response-Body
         _response.write("Ich h�re Stimmen!!<br>");
@@ -34,7 +34,7 @@ var ServerTest;
         _response.write("Method: " + _request.method + "<br>");
         _response.write("Url: " + _request.url + "<br>");
         _response.write("Headers: " + _request.headers + "<br>");
-        // ?
+        // die Url.parse Methode zerteilt einen URL-String und gibt ein URL Objekt zur�ck
         let query = Url.parse(_request.url, true).query;
         // ?
         for (let key in query)
